@@ -201,6 +201,16 @@ public class PatoVillarroel {
                     EjercicioA8 ejercicioA8 = new EjercicioA8();
                     ejercicioA8.desarrollar();
                     break;
+                        
+                case "a9":
+                    EjercicioA9 ejercicioA9 = new EjercicioA9();
+                    ejercicioA9.desarrollar();
+                    break;
+                    
+                case "a10":
+                    EjercicioA10 ejercicioA10 = new EjercicioA10();
+                    ejercicioA10.desarrollar();
+                    break;
 
                 default:
                     System.out.println("No existe ese ejercicio");
