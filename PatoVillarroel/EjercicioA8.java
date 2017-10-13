@@ -22,20 +22,24 @@ public class EjercicioA8 {
         System.out.print("\nIndica un numero menor para meter en la lista anterior: ");
         num = entrada.nextInt();
         
+        int c = 0;
         for (int i = 0; i < tabla.length; i++) {            
             if (tabla[i] > num) {
-                tabla[i] = num;
-            }
-            else {
-                tabla[num-10+pos] = tablaBackup[num];
+                if (c == 0) {
+                    tabla2[i] = num;
+                    c = 1;
+                }
+                tabla2[i+1] = tabla[i];
             }
         }
         
         System.out.print("Nos numeros quedaron así:\n");
         
-        for (int num = 0; num < 9; num++) {
-            System.out.print(tabla[num]+", ");
+        for (int i = 0; i < tabla2.length-1; i++) {
+            System.out.print(tabla2[i]+", ");
         }
-            System.out.print(tabla[9]+"\n");
+        
+        int last = tabla2.length-1;
+        System.out.print(tabla2[last]+"\n");
     }
 }

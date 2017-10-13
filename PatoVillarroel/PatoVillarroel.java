@@ -16,7 +16,7 @@ public class PatoVillarroel {
         
         do {
             
-            System.out.println("Indica el Nº del ejercicio para entrar.\nPresiona x para salir");
+            System.out.print("Indica el Nº del ejercicio para entrar: ");
             Scanner opcion = new Scanner(System.in);
             ex = opcion.nextLine();
  
@@ -172,22 +172,22 @@ public class PatoVillarroel {
                     ejercicioA2.desarrollar();
                     break;
                     
-                 case "a3":
+                case "a3":
                     EjercicioA3 ejercicioA3 = new EjercicioA3();
                     ejercicioA3.desarrollar();
                     break;
                     
-                 case "a4":
+                case "a4":
                     EjercicioA4 ejercicioA4 = new EjercicioA4();
                     ejercicioA4.desarrollar();
                     break;
                     
-                 case "a5":
+                case "a5":
                     EjercicioA5 ejercicioA5 = new EjercicioA5();
                     ejercicioA5.desarrollar();
                     break;
                       
-                 case "a6":
+                case "a6":
                     EjercicioA6 ejercicioA6 = new EjercicioA6();
                     ejercicioA6.desarrollar();
                     break;
@@ -195,6 +195,11 @@ public class PatoVillarroel {
                 case "a7":
                     EjercicioA7 ejercicioA7 = new EjercicioA7();
                     ejercicioA7.desarrollar();
+                    break;
+                    
+                case "a8":
+                    EjercicioA8 ejercicioA8 = new EjercicioA8();
+                    ejercicioA8.desarrollar();
                     break;
 
                 default:
