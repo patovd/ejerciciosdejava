@@ -15,7 +15,7 @@ public class EjercicioA11 {
         float $sumaProm = 0;
         
         System.out.println("Ingresa los promedios timestrales de cada alumno separados por - ");
-        System.out.println("Ejemplo: 6.8/5.2/4.7 (el punto es decimal)\n");
+        System.out.println("Ejemplo: 6.8-5.2-4.7 (el punto es decimal)\n");
         
         Scanner $entrada = new Scanner(System.in);
         
