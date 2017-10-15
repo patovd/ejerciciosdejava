@@ -27,8 +27,6 @@ public class EjercicioA12 {
         
         do {
             System.out.print("\n----------------------------\nIndica operación: ");
-            //$entrada.skip("\n");
-            //$opcion = Integer.parseInt($entrada.nextLine()); // esto es para evitar que se salte la entrada de texto por haber pedido un numero antes... una tontera de Java.
             $opcion = $entrada.nextInt();
 
             switch($opcion) {
@@ -136,26 +134,26 @@ public class EjercicioA12 {
                         for(int $i = 1; $i < $asientos.length; $i++) { 
                             if ($i > 0 && $i < 10) {
                                 if ($asientos[$i] == null) {
-                                    System.out.println("      "+$i+":   disponible");
+                                    System.out.println("      "+$i+":   ( ) disponible");
                                 } 
                                 else {
-                                    System.out.println("      "+$i+":     reservado por "+$asientos[$i]);
+                                    System.out.println("      "+$i+":   (•) reservado por "+$asientos[$i]);
                                 }
                             }
                             else if ($i >= 10 && $i < 100) {
                                 if ($asientos[$i] == null) {
-                                    System.out.println("      "+$i+":  disponible");
+                                    System.out.println("      "+$i+":  ( ) disponible");
                                 } 
                                 else {
-                                    System.out.println("    "+$i+":    reservado por "+$asientos[$i]);
+                                    System.out.println("      "+$i+":  (•) reservado por "+$asientos[$i]);
                                 }
                             }
                             else {
                                 if ($asientos[$i] == null) {
-                                    System.out.println("      "+$i+": disponible");
+                                    System.out.println("      "+$i+": ( ) disponible");
                                 }   
                                 else {
-                                    System.out.println("      "+$i+":   reservado por "+$asientos[$i]);
+                                    System.out.println("      "+$i+": (•) reservado por "+$asientos[$i]);
                                 }
                             }
                         }
@@ -165,14 +163,40 @@ public class EjercicioA12 {
                     }
                     break;
                     
+                //*************************************************************    
+                case 5: // ELIMINAR RESERVA
+                    System.out.println("\n  5. ELIMINAR RESERVA");
+                    
+                    if ($vuelo != null) {
+                        
+                        System.out.print("  • Indica el número de asiento para eliminar su reserva: ");
+                        int $asiento = $entrada.nextInt(); // capturamos el asiento del pasajero
+                        
+                        boolean $liberado = false;
+                         
+                        do {
+                            if ($asientos[$asiento] == null) { // si el asiento está libre.
+                                System.out.print("  × El asiento está vacio. Indica otro: ");
+                                $asiento = $entrada.nextInt(); // capturamos el asiento del pasajero
+                                $liberado = false;
+                            }           
+                            else { 
+                                System.out.println("  • Se ha eliminado la reserva de "+$asientos[$asiento]+" en el asiento "+$asiento);
+                                $asientos[$asiento] = null; // liberamos el asiento del pasajero
+                                $liberado = true;
+                            }
+                            
+                        } while ($liberado == false);  
+                    }
+                    else {
+                        System.out.println("  × No puedes eliminar reservas porque no existe vuelo activo.");
+                    }
+                    break;    
                     
                     
             }
-            
-            //System.out.println("opcion "+$opcion);
-        
+
         }
         while ($opcion > 0 && $opcion < 6);
-  
     }
 }
